@@ -18,7 +18,6 @@ file = st.file_uploader("Choose any dog photo from computer", type=["jpg", "png"
 def import_and_predict(image_data, model):
     size = (244, 244)
     image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
-    image = ImageOps.grayscale(image)
     img = np.asarray(image)
     img = img.reshape((size[0], size[1], 1))
     img_reshape = img[np.newaxis, ...]
